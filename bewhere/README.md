@@ -10,15 +10,15 @@
 
 - edit the file ./config
 ```javascript
+//The bewhere Info 
 const bewhere = {
-    baseUrl: "virtserver.swaggerhub.com/bewhere/BeWhere/4.0.0",
-    endPoint: "https://virtserver.swaggerhub.com/bewhere/BeWhere/4.0.0/",
+    baseUrl: "api.bewhere.com",
+    endPoint: "https://api.bewhere.com/",
     name: "BeWhere ACOUNT NAME",//not used for now but it will help you distinguish your apps
-    data: {
-        //you can add more default config here
-        
-    }
-
+   
+  	username: "<USER_NMAE>",
+  	apiKey:"<api_token>",
+    accountId:"<account_id>",
 };
 
 ```

@@ -1,13 +1,14 @@
 var config = require("./config");
 var http = require("http");
-
+var log = require("log"); 
+log.setLevel("info");
 /**
  * A generic http client that handles the communication with remote APIs
  * @class Client
  * @constructor Client
  */
 function Client(dto) {
-     //console.log(JSON.stringify(dto));
+     //log.info(JSON.stringify(dto));
     if (!dto || !dto.endPoint ) {
         
         
@@ -52,7 +53,9 @@ Client.prototype._callApi = function(reqparams) {
     
     
     params.headers = params.headers ? params.headers : {};
-    
+    if(!params.headers.token){
+      params.headers.token=config.bewhere.apiKey;
+    }
     if(!params.method){
         params.method = "GET";
     }
@@ -65,15 +68,15 @@ Client.prototype._callApi = function(reqparams) {
 
     params.url = params.url.indexOf("http") > -1 ? params.url : this.endPoint + "/"  + params.url;
     if(params.bodyString){
-        params.headers["Content-Type"] =  "text/xml";
+        params.headers["Content-Type"] =  "application/json";
     }
 
-    console.log(JSON.stringify(params));
+    log.info(JSON.stringify(params));
     
     var response = http.request(params);
     
 	
-    console.log("Received following response  : " + JSON.stringify(response));
+    log.info("Received following response  : " + JSON.stringify(response));
     if (response.status >= "200" && response.status < "300") {
 
         var responseBody = "";
@@ -85,7 +88,7 @@ Client.prototype._callApi = function(reqparams) {
                 responseBody = response.body;
             } 
         }    
-		//console.log(" response body  : " + JSON.stringify(responseBody));
+		//log.info(" response body  : " + JSON.stringify(responseBody));
         if (responseBody && responseBody.message) {
             throw response;
         }else {
@@ -107,7 +110,7 @@ Client.prototype._handleError = function(response) {
       errorObj = response;
     
   };
-	    console.log(JSON.stringify(errorObj));
+	    log.info(JSON.stringify(errorObj));
   throw {
     "errorCode": "Invocation_Error",
     "errorDetail": errorObj
