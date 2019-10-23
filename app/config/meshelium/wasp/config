@@ -3,12 +3,12 @@ var mapper = "app/config/meshelium/wasp/dataTransformation"
 var deviceDataTopUp =  {
     "lat": -33.4008511, 
     "long": -70.54576277777778,
-    "address": "Convergia Green Farms", 
-    "city": "New York",
-    "country": "United States",
-    "locationType": "Agriculture",
-    "locationSection": "Farm",
-    "physicalEnvironment": "Fields",
-    "sensor": "wasp",
-    "source": "simulator"
+    "address": "Be Where", 
+    "city": "Be Where",
+    "country": "Be Where",
+    "locationType": "Be Where",
+    "locationSection": "Be Where",
+    "physicalEnvironment": "Be Where",
+    "sensor": "lte",
+    "source": "Be Where"
 }

@@ -11,11 +11,17 @@ myApp.constant("constants", {
    	  "mapMarker": {
           url: "https://i.ibb.co/Jzcnn6F/map-pin.png"
    	  }
+    },
+     "Be Where": { 
+   	  "mapMarker": {
+          url: "https://i.ibb.co/Jzcnn6F/map-pin.png"
+   	  }
     }
   },
   mapDefaultCenter:"-33.4008511,-70.54576277",
   sourcesLabels: {
-    "simulator": "Meshlium Waspmote"
+    "simulator": "Meshlium Waspmote",
+    "Be Wher": "Be Wher Device"
   },
   infoWindows: {
     "icons": {
