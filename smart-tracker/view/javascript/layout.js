@@ -27,11 +27,21 @@ var menuItemsAdmin = {
   ]
 };
 
+
 var headerItems = {
     "logo": "https://i.ibb.co/TmfS643/logo-450.png",
     "items": [],
     "subitems": [
-        {"id":"1", "iconClass":"fa fa-bell", "label": "Notification Settings", "route":"#/notifications", "active":"false"} ,
+        {"id":"2", "iconClass":"fa fa-bell", "label": "Change Password", "route":"#/changePassword", "active":"false"} 
+    ], 
+    "logout": {"icon": "fa fa-sign-out", "label": "Logout", "route":"#/logout"},
+  "appname":"CxC App Factory"
+};
+var headerItemsAdmin = {
+    "logo": "https://i.ibb.co/TmfS643/logo-450.png",
+    "items": [],
+    "subitems": [
+        {"id":"1", "iconClass":"fa fa-bell", "label": "Notification Settings", "route":"#/notifications", "active":"false"},
         {"id":"2", "iconClass":"fa fa-bell", "label": "Change Password", "route":"#/changePassword", "active":"false"} 
     ], 
     "logout": {"icon": "fa fa-sign-out", "label": "Logout", "route":"#/logout"},
@@ -60,4 +70,4 @@ var routingItems = {
   ]
 };
 //admin routes
-var adminRoutes=["/control","/ai","/add-device","/rules"];
+var adminRoutes=["/control","/ai","/add-device","/rules","/notifications"];

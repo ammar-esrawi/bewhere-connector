@@ -5,6 +5,7 @@ myApp
 		.constant("menuItemsAdminJson",  menuItemsAdmin)
 		.constant("adminRoutesJson",adminRoutes)
     .constant("headerItemsJson", headerItems)
+		.constant("headerItemsAdminJson", headerItemsAdmin)
     .constant("routingJson", routingItems)
     .config(httpsConfig)
     .config(wssConfig)

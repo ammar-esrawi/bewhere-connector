@@ -1,4 +1,4 @@
-   myApp.controller('myAppCtrl', function($scope,$rootScope, constants, $sce,httpClient, wsClient, headerItemsJson, menuItemsJson,menuItemsAdminJson) {
+   myApp.controller('myAppCtrl', function($scope,$rootScope, constants, $sce,httpClient, wsClient, headerItemsJson, menuItemsJson,menuItemsAdminJson,headerItemsAdminJson,headerItemsJson) {
     	var vm = this;  
        vm.scope = $scope;
        if(constants.appTitle){
@@ -30,6 +30,7 @@
           if(vm.isAdmin){
             vm.user.login=JSON.parse($.cookie('user')).name+"(Admin)";
             vm.menuItems = menuItemsAdminJson;
+            vm.headerItems = headerItemsAdminJson;
           }
         },
         function(err) {
@@ -85,9 +86,9 @@ myApp.controller('mapCtrl', function($location, constants, $routeParams) {
     
 myApp.controller('menuCtrl', function(headerItemsJson, menuItemsJson) {
     var vm = this;
-    vm.headerItems = headerItemsJson;
+    
     vm.user = JSON.parse($.cookie('user'));
-    vm.menuItems = menuItemsJson;
+    //vm.menuItems = menuItemsJson;
 });
 
 myApp.controller('notificationCtrl', function(httpClient) {
