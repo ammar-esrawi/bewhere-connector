@@ -43,10 +43,10 @@ function bw2wasp(bw){
     battery:bw.batteryLevel,
     light:bw.light,
     
-            location: {
+            
                 lat:bw.latitude,
     long:bw.longitude
-            }
+            
   };
   return d
   

@@ -202,15 +202,17 @@
                         </div>
                     </div>
                 </li>
-                <li class="myItem" gridster-item='{sizeX: 1, sizeY: 1, col: 0, row: 2 }' ng-if="vm.latest.ph">
+  
+
+              		<li class="myItem" gridster-item='{sizeX: 1, sizeY: 1, col: 0, row: 3 }' ng-if="vm.latest.humidity">
                     <div class="box">
                         <div class="box-content">
-                            <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="ph Level" class="box-label">ph Level</div>
+                            <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="Humidity" class="box-label">Humidity</div>
                             <div  style="height: calc(100% - 30px)" > <scriptr-gauge
                                                                                      transport='wss'
-                                                                                     boxLabel='ph Level'
+                                                                                     boxLabel='Humidity'
                                                                                      msg-tag='{{vm.tag}}'
-                                                                                     gauge-value='vm.selectedDevice.ph.value'
+                                                                                     gauge-value='vm.selectedDevice.humidity.value'
                                                                                      value-font-color='#999'
                                                                                      min='0'
                                                                                      max='100'
@@ -244,22 +246,22 @@
                                                                                      pointer='false'
                                                                                      counter='false'
                                                                                      http-method='GET'
-                                                                                     symbol='{{vm.selectedDevice.ph_unit.value || ""}}'
-                                                                                     on-format-data='vm.phFormatData'
+                                                                                     symbol='{{vm.selectedDevice.humidity_unit.value || ""}}'
+                                                                                     on-format-data='vm.humidityFormatData'
                                                                                      ></scriptr-gauge> </div>
                         </div>
                     </div>
                 </li>
-                <li class="myItem" gridster-item='{sizeX: 3, sizeY: 1, col: 1, row: 2}' ng-if="vm.selectedDevice.ph">
+                <li class="myItem" gridster-item='{sizeX: 3, sizeY: 1, col: 1, row: 3}' ng-if="vm.selectedDevice.humidity">
                         <div class="box">
                             <div class="box-content">
-                                <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="PH" class="box-label">PH</div>
+                                <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="Humidity" class="box-label">Humidity</div>
                                 <div  style="height: calc(100% - 30px)" > <scriptr-chart
                                                                                          type='line'
-                                                                                         boxLabel='PH'
+                                                                                         boxLabel='Humidity'
                                                                                          xkey='creationDate'
-                                                                                         ykeys='["ph"]'
-                                                                                         labels='["PH"]'
+                                                                                         ykeys='["Humidity"]'
+                                                                                         labels='["Humidity"]'
                                                                                          colors='["#FCC717","#38B9D6", "#1DBC68"]'
                                                                                          transport='wss'
                                                                                          msg-tag='{{vm.tag}}'
@@ -295,15 +297,15 @@
                         </div>
                     </li>
 
-              		<li class="myItem" gridster-item='{sizeX: 1, sizeY: 1, col: 0, row: 3 }' ng-if="vm.latest.water_conductivity">
+						<li class="myItem" gridster-item='{sizeX: 1, sizeY: 1, col: 0, row: 4 }' ng-if="vm.latest.light">
                     <div class="box">
                         <div class="box-content">
-                            <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="Water Conductivity" class="box-label">Water conductivity</div>
+                            <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="light" class="box-label">light</div>
                             <div  style="height: calc(100% - 30px)" > <scriptr-gauge
                                                                                      transport='wss'
-                                                                                     boxLabel='Water conductivity'
+                                                                                     boxLabel='light'
                                                                                      msg-tag='{{vm.tag}}'
-                                                                                     gauge-value='vm.selectedDevice.water_conductivity.value'
+                                                                                     gauge-value='vm.selectedDevice.light.value'
                                                                                      value-font-color='#999'
                                                                                      min='0'
                                                                                      max='100'
@@ -337,22 +339,22 @@
                                                                                      pointer='false'
                                                                                      counter='false'
                                                                                      http-method='GET'
-                                                                                     symbol='{{vm.selectedDevice.water_conductivity_unit.value || ""}}'
-                                                                                     on-format-data='vm.waterConductivityFormatData'
+                                                                                     symbol='{{vm.selectedDevice.light_unit.value || ""}}'
+                                                                                     on-format-data='vm.lightFormatData'
                                                                                      ></scriptr-gauge> </div>
                         </div>
                     </div>
                 </li>
-                <li class="myItem" gridster-item='{sizeX: 3, sizeY: 1, col: 1, row: 3}' ng-if="vm.selectedDevice.water_conductivity">
+                <li class="myItem" gridster-item='{sizeX: 3, sizeY: 1, col: 1, row: 4}' ng-if="vm.selectedDevice.light">
                         <div class="box">
                             <div class="box-content">
-                                <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="Water Conductivity" class="box-label">Water Conductivity</div>
+                                <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="light" class="box-label">light</div>
                                 <div  style="height: calc(100% - 30px)" > <scriptr-chart
                                                                                          type='line'
-                                                                                         boxLabel='Water Conductivity'
+                                                                                         boxLabel='light'
                                                                                          xkey='creationDate'
-                                                                                         ykeys='["Water Conductivity"]'
-                                                                                         labels='["Water Conductivity"]'
+                                                                                         ykeys='["light"]'
+                                                                                         labels='["light"]'
                                                                                          colors='["#FCC717","#38B9D6", "#1DBC68"]'
                                                                                          transport='wss'
                                                                                          msg-tag='{{vm.tag}}'
@@ -388,15 +390,15 @@
                         </div>
                     </li>
 
-						<li class="myItem" gridster-item='{sizeX: 1, sizeY: 1, col: 0, row: 4 }' ng-if="vm.latest.oxidation_reduction_potential">
+						  						<li class="myItem" gridster-item='{sizeX: 1, sizeY: 1, col: 0, row: 5 }' ng-if="vm.latest.pressure">
                     <div class="box">
                         <div class="box-content">
-                            <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="Oxidation Reduction Potential" class="box-label">Oxidation Reduction Potential</div>
+                            <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="Pressure" class="box-label">Pressure</div>
                             <div  style="height: calc(100% - 30px)" > <scriptr-gauge
                                                                                      transport='wss'
-                                                                                     boxLabel='Oxidation Reduction Potential'
+                                                                                     boxLabel='Pressure'
                                                                                      msg-tag='{{vm.tag}}'
-                                                                                     gauge-value='vm.selectedDevice.oxidation_reduction_potential.value'
+                                                                                     gauge-value='vm.selectedDevice.pressure.value'
                                                                                      value-font-color='#999'
                                                                                      min='0'
                                                                                      max='100'
@@ -430,115 +432,22 @@
                                                                                      pointer='false'
                                                                                      counter='false'
                                                                                      http-method='GET'
-                                                                                     symbol='{{vm.selectedDevice.oxidation_reduction_potential_unit.value || ""}}'
-                                                                                     on-format-data='vm.oxydoReductioPotentialFormatData'
+                                                                                     symbol='{{vm.selectedDevice.pressure_unit.value || ""}}'
+                                                                                     on-format-data='vm.pressureFormatData'
                                                                                      ></scriptr-gauge> </div>
                         </div>
                     </div>
                 </li>
-                <li class="myItem" gridster-item='{sizeX: 3, sizeY: 1, col: 1, row: 4}' ng-if="vm.selectedDevice.oxidation_reduction_potential">
+                <li class="myItem" gridster-item='{sizeX: 3, sizeY: 1, col: 1, row: 5}' ng-if="vm.selectedDevice.pressure">
                         <div class="box">
                             <div class="box-content">
-                                <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="Oxidation Reduction Potential" class="box-label">Oxidation Reduction Potential</div>
+                                <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="Pressure" class="box-label">Pressure</div>
                                 <div  style="height: calc(100% - 30px)" > <scriptr-chart
                                                                                          type='line'
-                                                                                         boxLabel='Oxidation Reduction Potential'
+                                                                                         boxLabel='Pressure'
                                                                                          xkey='creationDate'
-                                                                                         ykeys='["Oxidation Reduction Potential"]'
-                                                                                         labels='["Oxidation Reduction Potential"]'
-                                                                                         colors='["#FCC717","#38B9D6", "#1DBC68"]'
-                                                                                         transport='wss'
-                                                                                         msg-tag='{{vm.tag}}'
-                                                                                         api-params='vm.params'
-																													  api='app/api/getDeviceHistory'
-                                                                                         grid-text-family='Source Sans Pro'
-                                                                                         line-width='3'
-                                                                                         point-size='4'
-                                                                                         point-stroke-colors='["#fff"]'
-                                                                                         ymax='auto'
-                                                                                         ymin='auto 0'
-                                                                                         smooth='true'
-                                                                                         hide-hover='auto'
-                                                                                         parse-time='true'
-                                                                                         xlabels='auto'
-                                                                                         xlabel-angle='0'
-                                                                                         goal-stroke-width='1'
-                                                                                         goal-line-colors='["#666633","#999966","#cc6666","#663333"]'
-                                                                                         event-stroke-width='1'
-                                                                                         event-line-colors='["#005a04","#ccffbb","#3a5f0b","#005502"]'
-                                                                                         axes='true'
-                                                                                         grid='true'
-                                                                                         grid-text-color='#888'
-                                                                                         grid-text-size='12'
-                                                                                         grid-text-weight='normal'
-                                                                                         http-method='GET'
-                                                                                         point-fill-colors='[null]'
-                                                                                         goals='[null]'
-                                                                                         events='[null]'
-                                                                                         on-format-data='vm.historicalFormatData'
-                                                                                         ></scriptr-chart> </div>
-                            </div>
-                        </div>
-                    </li>
-
-						  						<li class="myItem" gridster-item='{sizeX: 1, sizeY: 1, col: 0, row: 5 }' ng-if="vm.latest.dissolved_oxygen">
-                    <div class="box">
-                        <div class="box-content">
-                            <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="Dissolved Oxygen" class="box-label">Dissolved Oxygen</div>
-                            <div  style="height: calc(100% - 30px)" > <scriptr-gauge
-                                                                                     transport='wss'
-                                                                                     boxLabel='Dissolved Oxygen'
-                                                                                     msg-tag='{{vm.tag}}'
-                                                                                     gauge-value='vm.selectedDevice.dissolved_oxygen.value'
-                                                                                     value-font-color='#999'
-                                                                                     min='0'
-                                                                                     max='100'
-                                                                                     hide-min-max='false'
-                                                                                     hide-value='false'
-                                                                                     show-inner-shadow='false'
-                                                                                     custom-sectors='{"percents":"false","ranges":[{}]}'
-                                                                                     shadow-size='5'
-                                                                                     shadow-opacity='0.2'
-                                                                                     start-animation-type='linear'
-                                                                                     refresh-animation-type='linear'
-                                                                                     value-font-family='Source Sans Pro'
-                                                                                     value-min-font-size='12'
-                                                                                     label-min-font-size='12'
-                                                                                     min-label-min-font-size='12'
-                                                                                     max-label-min-font-size='12'
-                                                                                     gauge-width-scale='1'
-                                                                                     shadow-vertical-offset='3'
-                                                                                     level-colors='["#a9d70b","#f9c802","#ff0000"]'
-                                                                                     relative-gauge-size='true'
-                                                                                     no-gradient='false'
-                                                                                     start-animation-time='700'
-                                                                                     refresh-animation-time='700'
-                                                                                     donut='false'
-                                                                                     donut-start-angle='90'
-                                                                                     reverse='false'
-                                                                                     decimals='2'
-                                                                                     format-number='false'
-                                                                                     human-friendly='false'
-                                                                                     human-friendly-decimal='2'
-                                                                                     pointer='false'
-                                                                                     counter='false'
-                                                                                     http-method='GET'
-                                                                                     symbol='{{vm.selectedDevice.dissolved_oxygen_unit.value || ""}}'
-                                                                                     on-format-data='vm.dissolvedOxygenFormatData'
-                                                                                     ></scriptr-gauge> </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="myItem" gridster-item='{sizeX: 3, sizeY: 1, col: 1, row: 5}' ng-if="vm.selectedDevice.dissolved_oxygen">
-                        <div class="box">
-                            <div class="box-content">
-                                <div  style="height: 30px;" tooltip-placement="bottom" uib-tooltip="Dissolved Oxygen" class="box-label">Dissolved Oxygen</div>
-                                <div  style="height: calc(100% - 30px)" > <scriptr-chart
-                                                                                         type='line'
-                                                                                         boxLabel='Dissolved Oxygen'
-                                                                                         xkey='creationDate'
-                                                                                         ykeys='["Dissolved Oxygen"]'
-                                                                                         labels='["Dissolved Oxygen"]'
+                                                                                         ykeys='["Pressure"]'
+                                                                                         labels='["Pressure"]'
                                                                                          colors='["#FCC717","#38B9D6", "#1DBC68"]'
                                                                                          transport='wss'
                                                                                          msg-tag='{{vm.tag}}'

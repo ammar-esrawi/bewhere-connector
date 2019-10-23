@@ -12,7 +12,7 @@ function transform(data){
   //fill object with empty fileds for the wanted fileds so he can properly load previous data to build healhty object
   for (var i = 0; i < fileds.length; i++)
   {
-		x[fileds[i]]="";
+		if(typeof x[fileds[i]] =='undefined' )x[fileds[i]]="";
   }
   //merge sensor and value as key-pair
   
