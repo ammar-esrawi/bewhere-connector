@@ -1,0 +1,53 @@
+function bw2device(bw){
+  if(!bw){
+    return {};
+  }
+  var d={
+    key:bw.id,
+    id:bw.id,
+    temperature:bw.temperature,
+    humidity:bw.humidity,
+    pressure:bw.barometricPressure,
+    battery:bw.batteryLevel,
+    light:bw.light,
+    lat:bw.latitude,
+    long:bw.longitude,
+    physicalEnvironment:"Be Where",
+  };
+  return d
+  
+}
+
+function bws2devices(bws){
+  if(!bws){
+    return [];
+  }
+  var res=[];
+  bws.forEach(function(e){
+    res.push(bw2device(e));
+  });
+  return res;
+}
+
+function bw2wasp(bw){
+  if(!bw){
+    return {};
+  }
+  var d={
+    id_wasp:bw.id,
+    id:bw.id,
+    id_secret:"EMPTY",
+    temperature:bw.temperature,
+    humidity:bw.humidity,
+    pressure:bw.barometricPressure,
+    battery:bw.batteryLevel,
+    light:bw.light,
+    
+            location: {
+                lat:bw.latitude,
+    long:bw.longitude
+            }
+  };
+  return d
+  
+}

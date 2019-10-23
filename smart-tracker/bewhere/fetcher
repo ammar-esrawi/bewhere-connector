@@ -1,0 +1,50 @@
+var http = require("http");
+var subdomain = require("subdomain");
+var log = require("log");
+log.setLevel("INFO");
+
+var config = require("./config");
+var bwHelper = require('./helper/bewhereHelper');
+var bwModule = require('bewhere/BeWhere');
+
+var bw = new bwModule.BeWhere();
+var cnMngr = bw.getConnectorManager();
+var myConnector = cnMngr.getConnector();
+
+//Build the url of the ingest api
+const api = "https://" + config.subDomain + ".scriptrapps.io/app/api/subscription/subscriber?auth_token=" + config.dmpBrokerToken;
+
+//get snapshot from bewhere for all beacons
+var bwSnapshots = myConnector.getSnapshots();
+
+// for each snapshot send api call
+var results = [];
+bwSnapshots.forEach(function (e) {
+    var dataSnap = bwHelper.bw2wasp(e);
+
+
+    log.info("Fetched Data : " + JSON.stringify(dataSnap));
+
+    //Call the ingest api, with randomly generated data
+    var callResult = http.request({
+        "url": api,
+        "method": "POST",
+        "bodyString": JSON.stringify(dataSnap),
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    });
+    results.push(
+        {
+            data: dataSnap,
+            res: callResult
+        }
+    );
+
+});
+
+
+return results;
+
+
+
