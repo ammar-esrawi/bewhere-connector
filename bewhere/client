@@ -83,17 +83,15 @@ Client.prototype._callApi = function(reqparams) {
         if (response.body) {
 
             try { 
-                responseBody = JSON.parse(response.body ?  response.body : {});
+                responseBody = JSON.parse(response.body ?  response.body : "{}");
+              //log.info(" response body  : " + JSON.stringify(responseBody));
             }catch(exception) {
                 responseBody = response.body;
             } 
         }    
 		//log.info(" response body  : " + JSON.stringify(responseBody));
-        if (responseBody && responseBody.message) {
-            throw response;
-        }else {
-            return response;
-        }
+        
+        return response; 
     }else {
         throw response;
     }
